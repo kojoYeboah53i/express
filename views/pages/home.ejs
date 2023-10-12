@@ -1,21 +1,21 @@
-<style>
-    .home{
-       
-   
-        display: flex;
-        flex-direction: column;
-        row-gap: 0.5rem;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-    }
-</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/home.css">
+<div class="wrapper">
+    <div class="sidebar">
 
-<div class="home">
-    <div> <h1>home</h1></div>
-    <div> <h1>Welcome</h1></div>
-    <div><h1> <%- user %>  </h1></div>
+    </div>
+    <div class="main_content">
+        <div class="header">Welcome!!</div>
+        <div class="info">
+            <div> <h1>home</h1></div>
+            <div> <h1>Welcome</h1></div>
+            <div><h1> <%- user %>  </h1></div>
+        </div>
+    </div>
+    <div>
+        <h1> right</h1>
+    </div>
 </div>
+
 
 <script src="js/home.js"></script>

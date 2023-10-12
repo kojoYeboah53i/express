@@ -10,19 +10,24 @@
     overflow: hidden;
     overflow-y: scroll;
     display: grid;
-    grid-template-columns: 20rem auto 40rem;
-    gap: 12.rem;
+    grid-template-columns: 16rem auto 23rem;
+    gap: 1.2rem;
+}
+.main_content{
+    width: 100%;
+    padding: 1.2rem 2rem;
+    scale: 0.8rem;
 }
 
-.wrapper header{
+.main_content header{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0.8rem 1.5rem;
     width: 100%;
     height: 12vh;
 }
-.wrapper header ul{
+/* .wrapper header ul{
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -38,15 +43,16 @@
     text-decoration: none;
     font-size: 1.3rem;
     margin-left: 2rem;
-}
+} */
 .sidebar-panel{
     width:100%;
     height: 100vh;
     overflow: hidden;
     overflow-y: scroll;
-    background-color: rgb(48, 13, 13);
+    background-color: rgb(50, 44, 11);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     color: white;
+    scale: 0.8rem
 }
 .wrapper .cards{
     display: grid;
@@ -57,7 +63,13 @@
     padding: 1rem 1.5rem;
     text-align: center;
 }
-
+.right{
+    display: block;
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border-radius: 12px;
+    /* border: 3px solid red; */
+}
 footer{
     position: absolute;
     bottom: 0;

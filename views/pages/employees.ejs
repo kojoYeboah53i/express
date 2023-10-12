@@ -1,37 +1,20 @@
-
-<style>
-    main{
-        display: flex;
-        row-gap: 0.5rem;
-        justify-content: space-between;
-        align-items: center;
-        text-align: center;
-        margin: 0 auto;
-        height: 90vh;
-        width: 100%;
-    }
-    button{
-        width: 30%;
-        height: 4rem;
-        font-size: 1.2rem;
-        font-weight: bold;
-        background-color: #1a3a0a;
-        color #f9f9f9;
-        border-radius: 10px;
-        cursor: pointer;
-        transition: all 0.3s ease-in-out;
-    }
-</style>
-<div> <h1>employee page</h1></div>
-
-<main>
-    <div>
-        <div><h1> <%- user %>  </h1></div>
-
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/dasboard.css">
+<div class="wrapper">
+    <div class="sidebar">
+    <%- include('../layouts/sidebar', {PageName: 'employees'}) %>
     </div>
-    <div class="logout">
-        <form action="#" >
-            <button type="submit" class="submit btn btn-primary btn-block btn-large">Logout</button>
-        </form>
+    <div class="main_content">
+        <div class="header">Employees</div>
+        <div class="info">
+       
+            <div><h1> <%- user %>  </h1></div>
+        </div>
     </div>
-</main>
+    <div class="right">
+        <h1> right</h1>
+    </div>
+</div>
+
+
+<script src="js/employees.js"></script>

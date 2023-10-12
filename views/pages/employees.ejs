@@ -5,7 +5,9 @@
     <%- include('../layouts/sidebar', {PageName: 'employees'}) %>
     </div>
     <div class="main_content">
-        <div class="header">Employees</div>
+        <header>
+            <h1> <%- title %> </h1>
+        </header>
         <div class="info">
        
             <div><h1> <%- user %>  </h1></div>
@@ -14,6 +16,9 @@
     <div class="right">
         <h1> right</h1>
     </div>
+</div>
+<div>
+    <%- include('../layouts/footer') %>
 </div>
 
 

@@ -16,6 +16,16 @@ router.get('/employees', (req, res) => {
         res.redirect('/login');
     }
     else{
+    // fetch employees from endpoint
+//    let employees = fetch('https://url')
+//                     .then(res => {
+//                         res.render('pages/employees', 
+//                         {
+//                             title: "Employees",
+//                             user:usr,
+//                             employees: res.json()
+//                         });
+//                     })
     res.render('pages/employees', {title: "Employees", user:usr} );
     }
 

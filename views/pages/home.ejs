@@ -5,10 +5,10 @@
     <%- include('../layouts/sidebar', {PageName: 'home'}) %>
     </div>
     <div class="main_content">
-        <div class="header">Welcome!!</div>
+        <header>
+            <h1> <%- title %> </h1>
+        </header>
         <div class="info">
-            <div> <h1>home</h1></div>
-            <div> <h1>Welcome</h1></div>
             <div><h1> <%- user %>  </h1></div>
         </div>
     </div>
@@ -16,6 +16,8 @@
         <h1> right</h1>
     </div>
 </div>
-
+<div>
+    <%- include('../layouts/footer') %>
+</div>
 
 <script src="js/home.js"></script>

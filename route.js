@@ -1,9 +1,5 @@
 const router = require('express').Router();
 
-router.get('/hello', (req, res) => {
-
-    res.send('Hello World');
-});
 
 router.get('/login', (req, res) => {
 
@@ -39,21 +35,24 @@ router.get('/home', (req, res) => {
         res.redirect('/login');
     }
     else{
-        res.render('pages/home', {title: "Home", user:usr } );
+    let cuisine = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Pescetarian'];
+
+        res.render('pages/home', {title: "Home", user:usr, kitchen: cuisine, } );
     }
 
 });
 
-router.post('/user', (req, res) => {
-
-    if(req.body.username != '' || req.body.username != null){
-        res.json({
-            username: req.body.username,
-           message : "success"
-        });
-
-    }
+//restaurant menu
+// router.get('/cuisine/list', (req, res) => {
+//     let cuisine = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Pescetarian'];
+//     res.json(cuisine);
     
-});
+// });
+
+// router.get('order', )
+
+
+    
+
 
 module.exports = router;

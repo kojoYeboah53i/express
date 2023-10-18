@@ -5,7 +5,7 @@ const app = express();
 //require ejs layout
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
-const router = require('./src/router/routes')
+const routes = require('./src/router/routes')
 
 
 //middleware
@@ -27,7 +27,7 @@ app.get('/', (req, res) => {
 
 
 app.use('/', route);
-app.use('/new', router);
+app.use('/api', routes);
 
 app.listen(4004, () => {
     console.log('Server is running on port 4004');

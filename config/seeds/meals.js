@@ -3,11 +3,14 @@
  * @returns { Promise<void> } 
  */
 exports.seed = async function(knex) {
-  // Deletes ALL existing entries
- const result =  await knex('meals').del()
 
- if(result){
-  return  await knex('meals').insert([
+  return knex('meals')
+  // Deletes ALL existing entries
+//  const result =  await knex('meals').del()
+  .del()
+  .then(function () {
+
+  return  knex('meals').insert([
     {
       name: 'burger',
      description: 'burger with cheese',
@@ -40,7 +43,9 @@ exports.seed = async function(knex) {
 
   ]);
 
- }
+ }).catch(function (error) {
+  console.error(error);
+ });
 
 
 

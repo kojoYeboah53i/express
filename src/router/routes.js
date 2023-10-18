@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const knex = require('../../config/database')
 
 const User = require('../controllers/user');
 // const Meal = require('../controllers/meal');
@@ -11,7 +12,11 @@ router.get('sandbox', (res, req) => {
     res.send('this is a sandbox')
 });
 
-
+router.get('getMeals', async(res, req) => {
+      const meals = await knex('meal').select('*').orderBy('id', 'desc');
+      console.log(meals);
+      res.json(meals)
+});
 
 
 

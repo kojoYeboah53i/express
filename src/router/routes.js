@@ -12,10 +12,10 @@ router.get('sandbox', (res, req) => {
     res.send('this is a sandbox')
 });
 
-router.get('getMeals', async(res, req) => {
-      const meals = await knex('meal').select('*').orderBy('id', 'desc');
-      console.log(meals);
-      res.json(meals)
+router.get('/v1/getMeals', async(res, req) => {
+      const meals = await knex('meals').select('*').orderBy('id', 'desc');
+    //   console.log(meals);
+      res.statusCode(200).json({meals: meals})
 });
 
 

@@ -15,21 +15,21 @@ const mealController = {
             } else {
                 let cuisine = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Pescetarian'];
 
-                //get meals from db
-                // const meals = await knex('meal').select('*').orderBy('id', 'desc');
-                // console.log(meals);
+                // get meals from db
+                const meals = await knex('meals').select('*').orderBy('id', 'desc');
+                console.log(meals);
 
-                // if(!meals){
-                //     res.render('pages/notFound', {    title: "Not Found",
-                //     user: usr,});
-                // }
+                if(!meals){
+                    res.render('pages/notFound', {    title: "Not Found",
+                    user: usr,});
+                }
 
 
                 res.render('pages/home', {
                     title: "Home",
                     user: usr,
                     kitchen: cuisine,
-                    // meals: meals
+                    meals: meals
                 });
             }
 

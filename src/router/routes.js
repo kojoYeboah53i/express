@@ -2,12 +2,11 @@ const router = require('express').Router();
 const knex = require('../../config/database')
 
 const User = require('../controllers/user');
-// const Meal = require('../controllers/meal');
-
+const Order = require('../controllers/order');
 
 router.post('/login', (res, req) => {User.loginUser()});
-router.post('/register', (res, req) => {User.registerUser()});
-// router.get('home', (res, req) => {Meal.getMeals()});
+
+
 router.get('sandbox', (res, req) => {
     res.send('this is a sandbox')
 });
@@ -15,8 +14,21 @@ router.get('sandbox', (res, req) => {
 router.get('/v1/getMeals', async(res, req) => {
       const meals = await knex('meals').select('*').orderBy('id', 'desc');
     //   console.log(meals);
-      res.statusCode(200).json({meals: meals})
+      res.json({meals: meals})
 });
+
+router.get('/v1/getOrders', async(res, req) => {
+  Order.getOrders(req, res);
+});
+
+router.post('/v1/createOrder', async(res, req) => {
+  Order.createOrder(req, res);
+});
+
+router.delete('/v1/deleteOrder', async(res, req) => {
+  Order.deleteOrder(req, res);
+});
+
 
 
 

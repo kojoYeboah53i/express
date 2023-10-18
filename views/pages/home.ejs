@@ -21,18 +21,31 @@
             </div>
       
             <div class="meals">
-            <div class="meal">
-               <div class="title"> 
-                <h3>name</h3>
-                <h3>price</h3>
-               </div>
-                <div class="description">
-                 <p>description</p>
-                 </div>
-                 <img src="https://payments.ipaygh.com/app/webroot/img/products/MER02854-Double_Decker-0.jpeg" alt="">
-            </div>
+                <div class="container">
+               
+                    <% meals.forEach(meal => { %>
+                        <div class="meal">
+                            <img src=<%= meal.image %> alt="">
+                            <div class="detail"> 
+                             <div class="desc">
+                                <h3><%= meal.name %></h3>
+                                <h3><%= meal.price %></h3>
+                             </div>
+                             <div class="description">
+                                 <p><%= meal.description %></p>
+                                 </div>
+                            </div>
+                            <button class="order" id="<% meal.id %>"> order</button>
+                           
+                         </div>
+                         <% }) %>
+                  
+              
+              
+                  
+                </div>
+
         </div>
-                <%- meals %>
         </div>
     </div>
     <div class="right">

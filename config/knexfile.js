@@ -5,12 +5,19 @@
  */
 module.exports = {
 
-  // development: {
-  //   client: 'sqlite3',
-  //   connection: {
-  //     filename: './dev.sqlite3'
-  //   }
-  // },
+  build: {
+    client: 'sqlite3',
+    connection: {
+      filename: './Menuplus.sqlite3'
+    },
+    migrations: {
+      tableName: 'knex_migrations',
+      directory: './migrations'
+    }, 
+    seeds: {
+      directory: './seeds'
+    }
+  },
 
   development: {
     client: 'mysql',
@@ -25,6 +32,9 @@ module.exports = {
     migrations: {
       tableName: 'knex_migrations',
       directory: './migrations'
+    }, 
+    seeds: {
+      directory: './seeds'
     }
   },
 

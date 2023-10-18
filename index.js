@@ -5,9 +5,8 @@ const app = express();
 //require ejs layout
 const expressLayouts = require('express-ejs-layouts');
 const path = require('path');
-const router = require('./src/router/routes')
+const routes = require('./src/router/routes')
 
-const db = require('./config/database');
 
 //middleware
 //use body-parser
@@ -18,15 +17,17 @@ app.set('view engine', 'ejs');
 //set layout
 app.use(expressLayouts);
 app.set('layout', 'layouts/main');
-//global static files path
+//global static files path  
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', route);
-app.use('/api', router);
 
 app.get('/', (req, res) => {
     res.render('pages/index', {title: "Login",} );
 });
+
+
+app.use('/', route);
+app.use('/api', routes);
 
 app.listen(4004, () => {
     console.log('Server is running on port 4004');

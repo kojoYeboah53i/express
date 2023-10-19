@@ -44,14 +44,14 @@
 
     }
     .meals .container .meal img{
-        width: 18rem;
-        height: 18rem;
+        width: 13rem;
+        height: 13rem;
         object-fit: cover;
         border-radius: 8px;
     }
     .meals .container .meal .detail{
         margin: 1rem;
-        width: 18rem;
+        width: 13rem;
         padding: 0.5rem 0.5rem;
         border: none;
         border-radius: 5px;
@@ -97,3 +97,6 @@ div.main_content > div > div.meals > div > div > button:hover {
         background-color: rgba(157, 155, 155, 0.299);
     color: white;
 }
+
+/* media screen mobile screen and less */
+@media 

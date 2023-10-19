@@ -16,10 +16,10 @@ const mealController = {
             } else {
                 let cuisine = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Pescetarian'];
 
-                const orders = await knex('orders')
-                .select('orders.*', 'meals.name', 'meals.price')
-                .leftJoin('meals', 'meals.id', 'orders.meal_id' )
-                .where('orders.username', usr);
+                // const orders = await knex('orders')
+                // .select('orders.*', 'meals.name', 'meals.price')
+                // .leftJoin('meals', 'meals.id', 'orders.meal_id' )
+                // .where('orders.username', usr);
 
                 // get meals from db
                 const meals = await knex('meals').select('*').orderBy('id', 'desc');
@@ -35,10 +35,10 @@ const mealController = {
                     title: "Home",
                     user: usr,
                     kitchen: cuisine,
-                    meals: meals,
-                    orders: orders 
+                    meals: meals
+                    // orders: orders 
 
-                });
+                }); 
             }
 
         } catch {

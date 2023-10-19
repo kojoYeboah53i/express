@@ -126,4 +126,5 @@ dist
 .yarn/install-state.gz
 .pnp.*
 public/upload.html
-dev.sqlite3
+dev.sqlite3     
+rest/

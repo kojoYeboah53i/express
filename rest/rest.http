@@ -82,3 +82,17 @@ GET https://api.spoonacular.com/food/menuItems/search?query=burger?apiKey=e2c65e
 ###
 
 GET http://localhost:4004/api/v1/getMeals
+
+
+###
+GET http://localhost:4004/api/v1/getOrders
+
+
+DELETE http://localhost:4000/api/v1/deleteOrder/1
+
+###
+GET http://localhost:4004/api/test-end
+
+###
+GET http://localhost:4004/api/v1/get-all-orders/isaac
+    

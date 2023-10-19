@@ -9,8 +9,10 @@ const routes = require('./src/router/routes')
 
 
 //middleware
-//use body-parser
-app.use(bodyParser.json());
+
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.json());
 
 //set view engine
 app.set('view engine', 'ejs');
@@ -27,7 +29,10 @@ app.get('/', (req, res) => {
 
 
 app.use('/', route);
-app.use('/api', routes);
+//use body-parser
+app.use('/api', routes);  
+
+
 
 app.listen(4004, () => {
     console.log('Server is running on port 4004');

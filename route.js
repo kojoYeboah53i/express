@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Meal = require('./src/controllers/meal');
 
 
+
 router.get('/login', (req, res) => {
     res.render('pages/index', {title: "Login"} );
 });
@@ -25,6 +26,7 @@ router.get('/employees', (req, res) => {
     }
   ne
 });
+
     
 
 

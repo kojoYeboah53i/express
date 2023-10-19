@@ -16,3 +16,7 @@
 
 - ```npx knex seed:make create_user_seeder``` //creating new seeder
 - ```npx knex seed:run``` //seed the tables with data
+
+## alter table columns
+
+- ```npx knex migrate:make alter_table_name``` //for adding additional columns to already existing table

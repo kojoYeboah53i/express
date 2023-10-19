@@ -2,17 +2,24 @@ const knex = require('../../config/database')
 
 const mealController = {
 
-    landingPage: async (req, res) => {
+    landingPage: async (req, res    ) => {
 
         try {
 
             let usr = req.query.username;
             // if usr is not null or usr is not empty redirect to login page
+            // select ur from users where username = usr
+            // const user = await knex('users').select('*').where('username', usr);
 
             if (!usr) {
                 res.redirect('/login');
             } else {
                 let cuisine = ['Gluten Free', 'Ketogenic', 'Vegetarian', 'Pescetarian'];
+
+                const orders = await knex('orders')
+                .select('orders.*', 'meals.name', 'meals.price')
+                .leftJoin('meals', 'meals.id', 'orders.meal_id' )
+                .where('orders.username', usr);
 
                 // get meals from db
                 const meals = await knex('meals').select('*').orderBy('id', 'desc');
@@ -28,7 +35,9 @@ const mealController = {
                     title: "Home",
                     user: usr,
                     kitchen: cuisine,
-                    meals: meals
+                    meals: meals,
+                    orders: orders 
+
                 });
             }
 

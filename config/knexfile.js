@@ -25,7 +25,7 @@ module.exports = {
       database: 'menuplus',
       user:     'root',
       password: '',
-      port : 3307,
+      port : 3306,
       host : 'localhost'
     },
 

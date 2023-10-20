@@ -279,7 +279,7 @@ footer{
 }
 
 .remove-deleted {
-    transform: translateY(10rem) translateX(10rem) rotateZ(25deg);
+    transform: scale(0.8) translateY(5rem) ;
     opacity: 0;
 }
 

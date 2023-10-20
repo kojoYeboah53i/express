@@ -167,6 +167,8 @@
     row-gap: 0.5rem;
     position: relative;
     height: 85vh;
+    transition: 1000ms ease-in-out;
+
 
 }
 
@@ -195,6 +197,8 @@
     height: 53vh;
     overflow: hidden;
     overflow-y: scroll;
+    transition: 1000ms ease-in-out;
+
 }
 .right .item-list .container .item{
     display: flex;
@@ -205,6 +209,8 @@
     background-color: rgba(157, 155, 155, 0.299);
     border-radius: 5px;
     margin-top: 0.9rem;
+    transition: 2000ms ease-in-out;
+
 }
 .right .item-list .container .item span{
  color: white;
@@ -250,7 +256,8 @@
     font-size: 1rem;
     font-weight: bold;
     cursor: pointer;
-    transition: 1sec ease-in-out;
+    transition: 2000ms ease-in-out;
+
 }
  /* div.item-list > div.confirm > button.cancel */
 .item-list .confirm button.cancel{
@@ -271,6 +278,10 @@ footer{
     font-size: 1.4rem;
 }
 
+.remove-deleted {
+    transform: translateY(10rem) translateX(10rem) rotateZ(25deg);
+    opacity: 0;
+}
 
 /* remove scrollbar */
 

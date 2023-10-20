@@ -36,7 +36,7 @@ const OrderController = {
 
   //delete one
   deleteOrder: async (req, res) => {
-    let id = req.query.id;
+    let id = req.params.id;
 
     //delete order from table where id = id
     const order = await knex("orders").where("id", id).del();

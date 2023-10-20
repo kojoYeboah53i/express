@@ -2,7 +2,10 @@ const showOrderList = async () => {
     const orderList = document.querySelector('.right .item-list .container')
     console.log(orderList)
 
-    let result = await fetch('http://localhost:4004/api/v1/getOrders/isaac')
+        // get url params
+    const searchParams = new URLSearchParams(window.location.search);
+    const usr = searchParams.get('username');
+    let result = await fetch(`http://localhost:4004/api/v1/getOrders/${usr}`)
 
     if(result.status == 200){
         const results = await result.json();

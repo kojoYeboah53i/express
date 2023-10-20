@@ -10,9 +10,10 @@ const routes = require('./src/router/routes')
 
 //middleware
 
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
-app.use(express.json());
+//use body-parser
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
+// app.use(express.json());
 
 //set view engine
 app.set('view engine', 'ejs');
@@ -29,7 +30,6 @@ app.get('/', (req, res) => {
 
 
 app.use('/', route);
-//use body-parser
 app.use('/api', routes);  
 
 

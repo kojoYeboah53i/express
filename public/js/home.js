@@ -15,7 +15,7 @@ btn.addEventListener('click', (e) => {
         return;
     }
 
-    fetch('/api/v1/createOrder', {
+    fetch('http://localhost:4004/api/v1/createOrder', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -27,20 +27,46 @@ btn.addEventListener('click', (e) => {
       })
       .catch(err => console.log(err));
     });
-        });
+    });
 
 
-    fetch('http://localhost:4004/api/v1/createOrder', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({meal_id: 11, username: 'isaac'})
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-    })
-    .catch(err => console.log(err));
+    let url = '';
 
-// } )();
+    const deleteBtn = document.querySelectorAll('.right .item-list .container .item span')
+
+    
+    //display order list
+    const showOrderList = async () => {
+        const orderList = document.querySelector('.right .item-list .container')
+        console.log(orderList)
+
+        let result = await fetch('http://localhost:4004/api/v1/getOrders/isaac')
+
+        if(result.status == 200){
+            const results = await result.json();
+            console.log(results)
+            const { orders } = results;
+            console.log(orders)
+            console.log(typeof(orders))
+
+        let outputHTML = '';
+           orders.map(order => {
+                outputHTML += `
+                <div class="item">
+                <h3 class="first">${order.name}</h3>
+                <h3>1</h3>
+                <h3>${order.price}</h3>
+                <span class="material-symbols-outlined">delete</span>
+                </div>
+                `
+                console.log(order.id)
+            })
+
+            orderList.innerHTML = outputHTML;
+
+        }
+
+    }
+
+    showOrderList();
+    

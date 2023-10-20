@@ -5,8 +5,8 @@ const knex = require('../../config/database')
 
 Model.knex(knex);
 
-class Meal extends Model {
-    static tableName = 'meals';
+class Order extends Model {
+    static tableName = 'orders';
 
     static get jsonSchema() {
         return {
@@ -24,4 +24,4 @@ class Meal extends Model {
     };
   }
 
-  module.exports = Meal;
+  module.exports = Order;

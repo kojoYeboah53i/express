@@ -99,4 +99,21 @@ div.main_content > div > div.meals > div > div > button:hover {
 }
 
 /* media screen mobile screen and less */
-@media 
+@media screen and (max-width: 756px) {
+    .meals .container{
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .meals .container .meal img{
+        width: 15rem;
+        height: 15rem;
+       
+    }
+    .meals .container .meal .detail{
+        margin: 1rem;
+        width: 15rem;
+    }
+
+}
